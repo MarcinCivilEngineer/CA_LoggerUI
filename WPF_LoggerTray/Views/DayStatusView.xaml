@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="WPF_LoggerTray.Views.DayStatusView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_LoggerTray.Views"
+             mc:Ignorable="d">
+    
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Margin="0 5 0 0" x:Name="PrevMonth">Miesiąc wstecz</Button>
+                <Button Margin="0 5 0 0" x:Name="CurrentDay">Dziś</Button>
+                <Button Margin="0 5 0 0" x:Name="NextMonth">Następny miesiąc</Button>
+            </WrapPanel>
+            <TextBlock Text="Wprowadzone czasy dla miesiąca: " Margin="0 0 0 0"/>
+            <DataGrid x:Name="RaportTime" SelectedItem="{Binding SelectedDrewno}" Height="150" AutoGenerateColumns="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="True" SelectionMode="Single" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Day}" Header="Dzień" />
+                    <DataGridTextColumn Binding="{Binding WeekDay}" Header="" />
+                    <DataGridTextColumn Binding="{Binding NazwaDrewna}" Header="Rozpoczęcie" />
+                    <DataGridTextColumn Binding="{Binding Fmk}" Header="Zakończenie"/>
+                    <DataGridTextColumn Binding="{Binding Typ}" Header="Typ"/>
+                    <DataGridTextColumn Binding="{Binding Comment}" Header="Komentarz"/>
+                    <DataGridTextColumn Binding="{Binding Break}" Header="Czas przerwy"/>
+                    <DataGridTextColumn Binding="{Binding Work}" Header="Czas pracy"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <TextBlock Text="Rozpoczęcie pracy/przerwy" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdStartTime"/>
+            <TextBlock Text="Zakończenie pracy/przerwy" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdEndTime"/>
+            <TextBlock Text="Czas między zakończiem a początkiem" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdDrewnoFmk" IsEnabled="False"/>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Margin="0 15 0 0" x:Name="CreateButton">Wprowadź przerwę</Button>
+                <Button Margin="0 15 0 0" x:Name="DeleteButton">Usuń przerwe</Button>
+                <Button Margin="0 15 0 0" x:Name="UpdateButton">Zawtierdź zmiany</Button>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

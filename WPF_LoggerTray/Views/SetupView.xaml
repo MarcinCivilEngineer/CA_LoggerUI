@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="WPF_LoggerTray.Views.SetupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_LoggerTray.Views"
+             mc:Ignorable="d">
+    
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Margin="0 5 0 0" x:Name="ClearDatabase">Wyczyść bazę danych</Button>
+            </WrapPanel>
+            
+
+            <TextBlock Text="Maile do rozesłania raportu" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdeMailToSend"/>
+
+            <TextBlock Text="Dzień w miesiący przypominający o wysłaniu rapportu" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdWhenSentRaport"/>
+
+            <TextBlock Text="Dni tygodnia wolne od pracy:" Margin="0 15 0 0"/>
+
+            <CheckBox IsChecked="{Binding Day1}">
+                <TextBlock Text="Niedziela"/>
+            </CheckBox>
+            <CheckBox x:Name="Day2">
+                <TextBlock Text="Poniedziałek"/>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Day2}">Wtorek</CheckBox>
+            <CheckBox IsChecked="{Binding Day3}">Środa</CheckBox>
+            <CheckBox IsChecked="{Binding Day4}">Czwartek</CheckBox>
+            <CheckBox IsChecked="{Binding Day5}">Piątek</CheckBox>
+            <CheckBox IsChecked="{Binding Day6}">Sobota</CheckBox>
+
+            <TextBlock Text="Dni wolne od pracy" Margin="0 15 0 0"/>
+            <ListView x:Name="LV_FreeDaysInYear" Height="80"/>
+
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Margin="0 5 0 0" x:Name="InsertDays">Wprowadź</Button>
+                <Button Margin="0 5 0 0" x:Name="DeleteDay">Usuń</Button>
+            </WrapPanel>
+
+            <TextBlock Text="Deklarowana godzina rozpoczęcia pracy" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdWorkingPlanningTimeStart"/>
+            <TextBlock Text="Deklarowana godzina zakończenia pracy" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdWorkingPlanningTimeEnd"/>
+            
+            <TextBlock Text="Przysługiwane dni urlopu - wypoczynkowego [UW]" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdHolidaysAtYear"/>
+
+            <TextBlock Text="Przysługiwane dni urlopu - opiekuńczego [UO]" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdHolidaysByKids"/>
+
+            <TextBlock Text="Poprawka do czasu rozpoczęcia pracy" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdMinutesStartWork"/>
+
+            <TextBlock Text="Poprawka do czasu zakończenia pracy" Margin="0 15 0 0"/>
+            <TextBox x:Name="EdMinutesEndWork"/>
+
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button Margin="0 15 0 0" x:Name="CancelButton">Przywróć</Button>
+                <Button Margin="0 15 0 0" x:Name="SaveButton">Zatwierdź zmiany</Button>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

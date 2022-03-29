@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPF_LoggerTray.Views.DialogInputView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_LoggerTray.Views"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="120" Width="280" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            
+            
+            <RowDefinition Height="10"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="{Binding Text}"/>
+            <TextBox Text="{Binding Value}" Width="Auto"/>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button IsCancel="True" Content="Zaniechaj" Margin="5 5 0 5"/>
+                <Button x:Name="ButtonOk" Content="Zatwierdź" Margin="5 5 0 5"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>

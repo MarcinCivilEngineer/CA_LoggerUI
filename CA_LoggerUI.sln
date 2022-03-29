@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CA_LoggerUI", "CA_LoggerUI\CA_LoggerUI.csproj", "{18F6141B-4910-4101-BF85-8BFECDC5193E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_LoggerTray", "WPF_LoggerTray\WPF_LoggerTray.csproj", "{FAB061D6-0743-493E-92B8-EB55D02DEF8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{18F6141B-4910-4101-BF85-8BFECDC5193E} = {18F6141B-4910-4101-BF85-8BFECDC5193E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18F6141B-4910-4101-BF85-8BFECDC5193E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F6141B-4910-4101-BF85-8BFECDC5193E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F6141B-4910-4101-BF85-8BFECDC5193E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F6141B-4910-4101-BF85-8BFECDC5193E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB061D6-0743-493E-92B8-EB55D02DEF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB061D6-0743-493E-92B8-EB55D02DEF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB061D6-0743-493E-92B8-EB55D02DEF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB061D6-0743-493E-92B8-EB55D02DEF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9B9A32F-9054-4521-B3E6-6317CB2EC42B}
+	EndGlobalSection
+EndGlobal

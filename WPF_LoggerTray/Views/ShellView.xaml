@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPF_LoggerTray.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:local="clr-namespace:WPF_LoggerTray.Views"
+        mc:Ignorable="d"
+         Title="Logger v0.10" Height="800" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" MinHeight="20">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+
+            <MenuItem Header="Raport" x:Name="LoadPageRaport"/>
+            <MenuItem Header="Wyślij raport"/>
+            <MenuItem Header="Ustawienia" x:Name="LoadPageSetup" HorizontalAlignment="Right" FlowDirection="RightToLeft"/>
+
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="10"/>
+                
+            </Grid.RowDefinitions>
+            <ScrollViewer Grid.Row="2" Grid.Column="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <ContentControl  x:Name="ActiveItem"/>
+            </ScrollViewer>
+
+        </Grid>
+    </DockPanel>
+</Window>
